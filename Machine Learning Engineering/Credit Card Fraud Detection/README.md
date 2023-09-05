@@ -3,9 +3,9 @@ The importance of Credit Card Fraud Detection can not be over stated. For exampl
 This is a Kaggle project (https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud). The dataset contains transactions made by credit cards in September 2013 by European cardholders. The dataset is highly unbalanced, where there are 492 frauds out of 284,807 transactions. Due to confidentiality issues, 28 of the original features have been transformed by PCA to be numerical input variables. The 'Time' and 'Amount' features are not transformed. Feature 'Time' contains the seconds elapsed between each transation and the first transaction in the dataset. Feature 'Amount' is the transaction amount. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
 
 This folder comprises the following files:
-1. data-analysis. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
-2. building-models-scikit-learn. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
-3. MLflow
+1. data-analysis.ipynb. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
+2. building-models-scikit-learn.ipynb. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
+3. MLflow-scikit-learn.ipynb. MLflow experiments are created. Parameters, Metrics and Artifacts are logged. This part of deployment is built for CI/CD.
 4. batch deployment on local host
 5. web deployment
 
