@@ -4,7 +4,7 @@ This is a Kaggle project (https://www.kaggle.com/datasets/mlg-ulb/creditcardfrau
 
 This folder comprises the following files:
 1. data-analysis. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
-2. model building scikit-learn
+2. building-models-scikit-learn. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
 3. MLflow
 4. batch deployment on local host
 5. web deployment
