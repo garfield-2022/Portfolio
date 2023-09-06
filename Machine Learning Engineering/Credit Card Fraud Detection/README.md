@@ -6,7 +6,7 @@ This folder comprises the following files:
 1. data-analysis.ipynb. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
 2. building-models-scikit-learn.ipynb. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
 3. MLflow-scikit-learn.ipynb. MLflow experiments are created. Parameters, Metrics and Artifacts are logged. This part of deployment is built for CI/CD.
-4. batch deployment on local host
+4. MLflow-deploy-localhost.ipynb. Batch querying and making predictions one batch at a time.
 5. web deployment
 
 Main references:
