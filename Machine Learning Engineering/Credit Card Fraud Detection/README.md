@@ -7,7 +7,7 @@ This is a Kaggle project (https://www.kaggle.com/datasets/mlg-ulb/creditcardfrau
 The project comprises the following files:
 
 1. data-analysis.ipynb. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
-2. building-models-scikit-learn.ipynb. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
+2. building-models-statsmodels-scikit-learn.ipynb. Logistic regression is chosen as the classificiation algorithm. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
 3. MLflow-scikit-learn.ipynb. MLflow experiments are created. Parameters, Metrics and Artifacts are logged. This part of deployment is built for CI/CD.
 4. MLflow-deploy-localhost.ipynb. Batch querying and making predictions one batch at a time.
 5. model.py. Logistic Regression model is dumped into model.pkl by pickle for building web application use.
@@ -16,9 +16,9 @@ The project comprises the following files:
 8. Wrap-up and Improvement: a brief wrap-up of the project and areas where improvements can be made are shown.
 
 Main references:
-1. Project 10. Credit Card Fraud Detection using Machine Learning in Python | Machine Learning Projects, "https://www.youtube.com/watch?v=NCgjcHLFNDg";
-2. Credit Fraud || Dealing with Imbalanced Datasets, "https://www.kaggle.com/code/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets";
+1. An Introduction to Statistical Learning with Applications in Python by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani and Jonathan Taylor.
+2. Deploy Machine Learning Models to Production -- With Flask, Streamlit, Docker, and Kubernetes on Google Cloud Platform by Pramod Singh;
 3. Beginning MLOps with MLFlow -- Deploy Models in AWS SageMaker, Google Cloud, and Microsoft Azure by Sridhar Alla and Suman Kalyan Adari;
-4. Deploy Machine Learning Models to Production -- With Flask, Streamlit, Docker, and Kubernetes on Google Cloud Platform by Pramod Singh;
-5. Credit Card Fraud Detection in Python -- Learn how to build a model that is able to detect fraudulent credit card transactions with high accuracy, recall and F1 score using Scikit-learn in Python, "https://thepythoncode.com/article/credit-card-fraud-detection-using-sklearn-in-python".
-6. An Introduction to Statistical Learning with Applications in Python by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani and Jonathan Taylor.
+4. Credit Card Fraud Detection in Python -- Learn how to build a model that is able to detect fraudulent credit card transactions with high accuracy, recall and F1 score using Scikit-learn in Python, "https://thepythoncode.com/article/credit-card-fraud-detection-using-sklearn-in-python".
+5. Credit Fraud || Dealing with Imbalanced Datasets, "https://www.kaggle.com/code/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets";
+6. Project 10. Credit Card Fraud Detection using Machine Learning in Python | Machine Learning Projects, "https://www.youtube.com/watch?v=NCgjcHLFNDg";
