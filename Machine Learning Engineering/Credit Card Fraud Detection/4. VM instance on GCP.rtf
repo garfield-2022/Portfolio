@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c100000;
+}
+\margl1440\margr1440\vieww18480\viewh13720\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 1. Create Bucket \'93\cb2 \expnd0\expndtw0\kerning0
+ccfd-mlops-storage\cb1 \kerning1\expnd0\expndtw0 \'94 in Cloud Storage, upload MLflow experiments(mlruns/ folder).\
+\
+2. Configure the Virtual Machine\
+Create Virtual Machine Instance \'93ccfd-mlops-server-0\'94. Click SSH \'93view cloud command\'94  and run the command in Google Cloud terminal to connect to the VM .  \
+\
+Install Anaconda on Linux.\
+# https://utho.com/docs/tutorial/how-to-install-anaconda-on-ubuntu-20-04-lts/\
+sudo apt update\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs37\fsmilli18667 \cf3 \expnd0\expndtw0\kerning0
+sudo apt upgrade\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \kerning1\expnd0\expndtw0 \
+cd /tmp\
+wget https://repo.anaconda.com/archive/{\field{\*\fldinst{HYPERLINK "https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh"}}{\fldrslt 
+\f2\fs26 \cf4 \cb2 \expnd0\expndtw0\kerning0
+Anaconda3-2023.09-0-Linux-x86_64.sh}}\
+sha256sum Anaconda3-2023.09-0-Linux-x86_64.sh\
+bash Anaconda3-2023.09-0-Linux-x86_64.s\
+source ~/.bashrc\
+# https://stackoverflow.com/questions/62743132/ubuntu-18-04-command-pyenv-not-found-did-you-mean\
+conda info\
+\
+Create a new environment:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs37\fsmilli18667 \cf3 \expnd0\expndtw0\kerning0
+conda create -n mlflow python=3.10\
+\
+Install packages:\
+conda activate mlflow\
+pip install mlflow google-cloud-storage\
+\
+3. Configure the Firewall.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \kerning1\expnd0\expndtw0 # To get Internal IP: 10.142.0.2\
+ifconfig\
+\
+Go to VPC networks, click Firewall then Create Firewall Rule. \
+Name: mlflow-server. \
+Description: Firewall rules for the MLflow server. \
+Logs: Off.\
+Target tags: ccfd-mlops-server-0, http-server, https-server\
+\
+4. Deploy and Query the Model.\
+mlflow models serve -m gs://ccfd-mlops-storage/mlruns/0/30316a6d471d41259cbd2910917e1593/artifacts/log_reg_model -h 10.142.0.2
+\f1\fs37\fsmilli18667 \cf3 \expnd0\expndtw0\kerning0
+\
+
+\f0\fs36 \cf0 \kerning1\expnd0\expndtw0 Get External IP: 35.196.11.25 on VM Instance.\
+\
+Query the model in your Jupyter Notebook. \
+\
+5. Cancel deployment\
+Ctrl-c\
+\
+6. Clean up\
+}
