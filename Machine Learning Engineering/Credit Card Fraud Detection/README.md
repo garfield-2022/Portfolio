@@ -9,9 +9,7 @@ The project comprises the following files:
 1. data-analysis.ipynb. 28 of 31 features are decomposed by PCA. No missing values in dataset. Amount distribution by class, as well as data points distribution by time, are explored. 
 2. building-models-statsmodels-scikit-learn.ipynb. P-values indicate that all the features are statistically significant. Logistic regression is chosen as the classificiation algorithm. But the same procedure can be applied to other classification algorithms. SMOTE is adopted to deal with imbalanced dataset. Evaluation metrics include balanced accuracy score, f1 score, auc score, precision-recall curve.
 3. MLflow-scikit-learn.ipynb. MLflow experiments are created. Parameters, Metrics and Artifacts are logged. This part of deployment is built for CI/CD.
-4. MLflow-deploy-localhost.ipynb. Batch querying and making predictions one batch at a time on local host.
-4. MLflow-deploy-VM-GCP. On Google Cloud platform, storage bucket, virtual machine instance as well as firewall rules are created. Now the model is deployed on GCP and accessed through external IP address.
-4. VM instance on GCP. Steps to achieve GCP deployment. 
+4. MLflow-deploy-localhost.ipynb: batch querying and making predictions one batch at a time on local host. MLflow-deploy-VM-GCP: on Google Cloud platform, storage bucket, virtual machine instance as well as firewall rules are created. Now the model is deployed on GCP and accessed through external IP address. VM instance on GCP: steps to achieve GCP deployment. 
 5. model.py. Logistic Regression model is dumped into model.pkl by pickle for building web application use.
 6. app.py. Deploy the model to a web application using flask. CSS and HTML templates are also provided. Prediction can be obtained by inputing variables on the webpage.
 7. api.py. A Flask app is built with Swagger. Two types of predictions, single transaction and group transactions, are made. The app is also run using Docker. All the steps are included in Dockerfile.txt, from which we build the Docker image and run the container. 
