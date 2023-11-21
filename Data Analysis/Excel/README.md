@@ -6,7 +6,7 @@ Second: Year wise Average Premium / policy.
 Third: Month wise total machines installed.
 
 Expectations: 
-1. Develop a excel based simulation to forecast the total business in next two years (2016 & 2017).
+1. Develop an excel based simulation to forecast the total business in the next two years (2016 & 2017).
 2. Provide answers to all questions mentioned "Challenge" sheet.
 
 In sheets Business Understanding, Policy_per_Machine, Number_Machine and Average_Premium, both functions and pivot tables are used to calculate key metrics.
